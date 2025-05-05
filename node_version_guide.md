@@ -1,3 +1,8 @@
+> 📄 **Note**: You are currently viewing `node_version_guide.md`.
+
+To return to the main project documentation, open [`Project-readme`](./README.md).
+
+
 # Node.js Version Setup Guide
 
 This project requires a specific Node.js version to ensure compatibility and stability.
@@ -126,3 +131,8 @@ If your terminal doesn't recognize `nvm`, make sure:
 ### Need help?
 
 If `nvm` is not recognized or Node isn’t switching correctly, double-check your `PATH` or refer to [NVM Docs](https://github.com/nvm-sh/nvm) or [nvm-windows Docs](https://github.com/coreybutler/nvm-windows).
+
+
+> 📄 **Note**: You are currently viewing `node_version_guide.md`.
+
+To return to the main project documentation, open [`Project-readme`](./README.md).
