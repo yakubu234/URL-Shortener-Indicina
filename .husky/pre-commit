@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+if [ "$npm_config_user_agent" != "" ] && ! echo "$npm_config_user_agent" | grep -q "pnpm"; then
+  echo "Commits must be made from projects installed with pnpm"
+  exit 1
+fi
+# Run lint + prettier checks on staged files
+pnpm exec lint-staged
+
+# Optionally run tests before commit (you can comment this out if slow)
+#pnpm test
