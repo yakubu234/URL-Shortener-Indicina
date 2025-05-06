@@ -13,7 +13,10 @@
     "prettier": "prettier --write src/**/*.ts",
     "prepare": "husky install",
     "test": "jest --detectOpenHandles --forceExit",
-    "test:watch": "jest --watch"
+    "test:unit": "jest --testPathPattern=unit --coverage",
+    "test:integration": "jest --testPathPattern=integration --coverage",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
