@@ -52,6 +52,7 @@ chmod +x start.sh
 ```
 
 #### Example Below
+
 ![Image of start.sh usage](./docs/using_shell_script.png)
 
 ✅ While you have the backend running on http://localhost:4000 and the frontend on http://localhost:3000, then you're good to go!
