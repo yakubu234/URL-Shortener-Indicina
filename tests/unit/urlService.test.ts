@@ -1,7 +1,15 @@
 import { UrlService } from '../../src/services/UrlService';
 import Url from '../../src/models/Url';
 import redis from '../../src/configs/redis';
-
+jest.mock('../../src/configs/redis', () => ({
+  __esModule: true,
+  default: {
+    get: jest.fn(),
+    set: jest.fn(),
+    incr: jest.fn(),
+    quit: jest.fn()
+  }
+}));
 jest.mock('../../src/models/Url', () => {
   const m = {
     findOneAndUpdate: jest.fn(),

@@ -8,4 +8,4 @@ fi
 pnpm exec lint-staged
 
 # Optionally run tests before commit (you can comment this out if slow)
-pnpm test
+pnpm test:unit

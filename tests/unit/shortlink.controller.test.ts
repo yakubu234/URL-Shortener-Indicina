@@ -1,6 +1,14 @@
 import { encodeURL } from '../../src/controllers/shortlink.controller';
 import { urlService } from '../../src/services/UrlService';
-
+jest.mock('../../src/configs/redis', () => ({
+  __esModule: true,
+  default: {
+    get: jest.fn(),
+    set: jest.fn(),
+    incr: jest.fn(),
+    quit: jest.fn()
+  }
+}));
 jest.mock('../../src/services/UrlService');
 
 describe('ShortLink Controller', () => {

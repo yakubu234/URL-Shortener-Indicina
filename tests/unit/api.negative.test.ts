@@ -1,6 +1,14 @@
 import request from 'supertest';
 import app from '../../src/app';
-
+jest.mock('../../src/configs/redis', () => ({
+  __esModule: true,
+  default: {
+    get: jest.fn(),
+    set: jest.fn(),
+    incr: jest.fn(),
+    quit: jest.fn()
+  }
+}));
 jest.mock('../../src/models/Url', () => ({
   __esModule: true,
   default: {
