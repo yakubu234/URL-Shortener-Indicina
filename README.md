@@ -68,16 +68,46 @@ VITE_API_BASE_URL=http://localhost:4000/api
 
 ---
 
+
 ## 🚀 Running the Application
 
+### 🔧 Backend (Node.js + Express + TypeScript)
+
 ```bash
-pnpm dev        # Starts the development server
-pnpm lint:fix   # Auto-fix linting issues
-pnpm build      # Compiles TypeScript
-pnpm start      # Starts compiled app
+pnpm install         # Install backend dependencies
+pnpm dev             # Starts the backend in dev mode (via ts-node-dev)
+pnpm lint:fix        # Auto-fix linting issues
+pnpm build           # Compiles backend TypeScript to /dist
+pnpm start           # Runs compiled backend code
 ```
 
 ---
+
+### 💻 Frontend (React + Vite + TypeScript)
+
+Navigate to the frontend directory first:
+
+```bash
+cd frontend
+pnpm install         # Install frontend dependencies
+pnpm dev             # Start Vite dev server (localhost:3000)
+pnpm build           # Type-check and build frontend for production
+pnpm build:dev       # Build frontend in development mode
+```
+
+> Ensure `VITE_API_BASE_URL` is correctly set in `frontend/.env`.
+
+---
+
+
+### Starting the application using script
+read more from here:  [`start.sh.usage.md`](./start.sh.usage.md):
+---
+
+## 🧭 System Architecture
+
+![ShortLink Architecture](./docs/product-explanation.png)
+
 
 ## 🔁 How It Works
 
