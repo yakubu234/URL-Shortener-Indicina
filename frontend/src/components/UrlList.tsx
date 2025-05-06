@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Search, Copy, ExternalLink, BarChart, Info } from "lucide-react";
 import { toast } from "sonner";
 import type { UrlItem } from "@/types/url";
@@ -81,6 +82,12 @@ const UrlList = ({
   };
 
   return (
+    <TransitionGroup component={null}>
+  {urls.map((url) => (
+    <CSSTransition key={url.id || url.shortCode} timeout={300} classNames="fade">
+      <div className="p-4 border rounded-lg bg-white link-card hover:shadow-md transition-shadow">
+       
+
     <Card className="shadow-lg">
       <CardContent className="pt-6 space-y-6">
         <div className="space-y-2">
@@ -195,6 +202,11 @@ const UrlList = ({
         </div>
       </CardContent>
     </Card>
+
+     </div>
+    </CSSTransition>
+  ))}
+</TransitionGroup>
   );
 };
 

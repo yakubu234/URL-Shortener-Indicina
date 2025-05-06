@@ -121,3 +121,21 @@
 .animate-pulse-blue {
   animation: pulse-blue 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 300ms ease-in-out;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 300ms ease-in-out;
+}
