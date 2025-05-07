@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { toast } from "sonner";
 import Layout from "@/components/Layout";
 import UrlForm from "@/components/UrlForm";
@@ -39,14 +39,14 @@ const Index = () => {
     return result; // Needed for UrlForm toast
   };
 
-  const handleSearch = (query: string) => {
+  const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
     if (query.length >= 3) {
       fetchUrls(1, 10, query);
     } else {
       fetchUrls(1);
     }
-  };
+  }, []);
 
   const handlePageChange = (page: number) => {
     fetchUrls(page, 10, searchQuery);

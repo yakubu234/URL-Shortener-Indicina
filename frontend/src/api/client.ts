@@ -13,8 +13,17 @@ export const api = {
     totalPages?: number;
   }> {
     const q = query.length >= 3 ? `&query=${encodeURIComponent(query)}` : '';
-    const res = await fetch(`${baseUrl}/list?page=${page}&limit=${limit}${q}`);
-    if (!res.ok) throw new Error('Failed to fetch URLs');
+    let res = null;
+
+    if (!query) {
+      res = await fetch(`${baseUrl}/list?page=${page}&limit=${limit}${q}`);
+    }
+
+    if (query) {
+      res = await fetch(`${baseUrl}/search?page=${page}&limit=${limit}${q}`);
+    }
+
+    if (!res || !res.ok) throw new Error('Failed to fetch URLs');
     return res.json();
   },
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+// import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Search, Copy, ExternalLink, BarChart, Info } from "lucide-react";
 import { toast } from "sonner";
 import type { UrlItem } from "@/types/url";
@@ -38,6 +38,7 @@ const UrlList = ({
   totalPages = 1,
   onPageChange = () => {},
 }: UrlListProps) => {
+
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
 
@@ -82,9 +83,9 @@ const UrlList = ({
   };
 
   return (
-    <TransitionGroup component={null}>
-  {urls.map((url) => (
-    <CSSTransition key={url.id || url.shortCode} timeout={300} classNames="fade">
+    <div>
+  {/* {urls.map((url) => ( */}
+    <div  className="fade">
       <div className="p-4 border rounded-lg bg-white link-card hover:shadow-md transition-shadow">
        
 
@@ -125,7 +126,7 @@ const UrlList = ({
               {urls.map((url) => {
                 const shortUrl = `${window.location.origin}/${url.shortCode}`;
                 return (
-                  <div key={url.id} className="p-4 border rounded-lg bg-white link-card hover:shadow-md transition-shadow">
+                  <div key={url?._id} className="p-4 border rounded-lg bg-white link-card hover:shadow-md transition-shadow">
                     <div className="flex flex-col space-y-2">
                       <div className="flex justify-between items-start">
                         <div>
@@ -204,9 +205,9 @@ const UrlList = ({
     </Card>
 
      </div>
-    </CSSTransition>
-  ))}
-</TransitionGroup>
+    </div>
+  {/* ))} */}
+</div>
   );
 };
 

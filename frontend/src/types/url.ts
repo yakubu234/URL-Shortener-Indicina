@@ -1,5 +1,6 @@
 export interface UrlItem {
   id: string;
+  _id: string;
   longUrl: string;
   shortCode: string;
   clicks: number;
@@ -8,6 +9,7 @@ export interface UrlItem {
 }
 
 export interface UrlStats {
+  _id: string;
   longUrl: string;
   shortCode: string;
   clicks: number;
